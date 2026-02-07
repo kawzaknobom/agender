@@ -2,16 +2,16 @@ import logging
 import sys
 import numpy as np
 from tf_keras.models import Model
-from tf_keras.layers import Input, Activation, add, Dense, Flatten, Dropout, Multiply, Embedding, Lambda, Add, Concatenate, Activation
-from tf_keras.layers.convolutional import Conv2D, AveragePooling2D, MaxPooling2D
-from tf_keras.layers.normalization import BatchNormalization
+from tf_keras.layers import (
+    Input, Activation, add, Dense, Flatten, Dropout, Multiply, 
+    Embedding, Lambda, Add, Concatenate, Conv2D, AveragePooling2D, 
+    MaxPooling2D, BatchNormalization, Layer
+)
 from tf_keras.regularizers import l2
 from tf_keras import backend as K
-from tf_keras.optimizers import SGD,Adam
+from tf_keras.optimizers import SGD, Adam
 from tf_keras.utils import plot_model
-from tf_keras.engine.topology import Layer
 from tf_keras import activations, initializers, regularizers, constraints
-
 sys.setrecursionlimit(2 ** 20)
 np.random.seed(2 ** 10)
 

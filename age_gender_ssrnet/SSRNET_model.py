@@ -19,7 +19,7 @@ np.random.seed(2 ** 10)
 class SSR_net:
     def __init__(self, image_size,stage_num,lambda_local,lambda_d):
         
-        if K.image_dim_ordering() == "th":
+        if K.image_data_format() == "channels_first":
             logging.debug("image_dim_ordering = 'th'")
             self._channel_axis = 1
             self._input_shape = (3, image_size, image_size)
@@ -176,7 +176,7 @@ class SSR_net:
 class SSR_net_general:
     def __init__(self, image_size,stage_num,lambda_local,lambda_d):
         
-        if K.image_dim_ordering() == "th":
+        if K.image_data_format() == "channels_first":
             logging.debug("image_dim_ordering = 'th'")
             self._channel_axis = 1
             self._input_shape = (3, image_size, image_size)
